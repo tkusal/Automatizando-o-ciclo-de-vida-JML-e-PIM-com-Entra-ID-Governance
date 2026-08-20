@@ -1,0 +1,1 @@
+# -Automatizando-o-ciclo-de-vida-JML-e-PIM-com-Entra-ID-Governance
