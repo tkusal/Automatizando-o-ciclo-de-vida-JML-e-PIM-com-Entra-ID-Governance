@@ -1,0 +1,27 @@
+# Arquivos locais e temporários
+*.log
+*.tmp
+*.clixml
+*.transcript.txt
+tmp/
+temp/
+output/
+reports/
+
+# Configurações de ambiente e segredos locais
+.env
+.env.*
+!.env.example
+*.secrets.*
+*.local.*
+
+# Editores e sistema operacional
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Relatórios de análise
+PSScriptAnalyzerResults.*
+TestResults/
