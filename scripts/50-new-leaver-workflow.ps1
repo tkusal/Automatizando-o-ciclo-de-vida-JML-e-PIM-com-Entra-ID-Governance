@@ -86,7 +86,12 @@ $params = @{
             executionSequence = 4
             isEnabled        = $true
             taskDefinitionId = '42ae2956-193d-4f39-be06-691b8ac4fa1d'
-            arguments        = @()
+            arguments        = @(
+                @{
+                    name  = 'daysUntilExpiration'
+                    value = '0'
+                }
+            )
         },
         @{
             category         = 'leaver'
