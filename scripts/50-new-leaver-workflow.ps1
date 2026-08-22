@@ -1,7 +1,7 @@
 <#
 NOTA DE SEGURANÇA
 O modo padrão apenas exibe o payload. Nenhum workflow é criado sem -Apply.
-As tarefas desabilitam contas, invalidam sessões e removem licenças diretas.
+As tarefas cancelam pendências, desabilitam contas, invalidam sessões, removem pacotes de acesso e licenças diretas.
 Teste com uma identidade descartável e mantenha o agendamento desligado inicialmente.
 Departamento e demais dados contextuais são recebidos em tempo de execução.
 Os GUIDs das tarefas são identificadores públicos de definições nativas da

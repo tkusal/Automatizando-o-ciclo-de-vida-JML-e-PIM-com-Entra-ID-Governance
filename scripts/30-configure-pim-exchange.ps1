@@ -28,6 +28,10 @@ param(
 
     [string]$Justification,
 
+    [string]$TicketNumber,
+
+    [string]$TicketSystem,
+
     [switch]$CreateEligibility,
     [switch]$Activate,
     [switch]$Apply
@@ -50,6 +54,10 @@ if ($CreateEligibility -and [string]::IsNullOrWhiteSpace($EligibilityJustificati
 
 if ($Activate -and [string]::IsNullOrWhiteSpace($Justification)) {
     throw 'Informe -Justification ao solicitar uma ativação.'
+}
+
+if ($Activate -and ([string]::IsNullOrWhiteSpace($TicketNumber) -or [string]::IsNullOrWhiteSpace($TicketSystem))) {
+    throw 'Informe -TicketNumber e -TicketSystem ao solicitar uma ativação.'
 }
 
 $escapedRoleDisplayName = $RoleDisplayName.Replace("'", "''")
@@ -96,6 +104,10 @@ if ($Activate) {
         roleDefinitionId  = $role.Id
         directoryScopeId  = '/'
         justification     = $Justification
+        ticketInfo        = @{
+            ticketNumber = $TicketNumber
+            ticketSystem = $TicketSystem
+        }
         scheduleInfo      = @{
             startDateTime = $startDateTime
             expiration    = @{
