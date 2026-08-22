@@ -50,10 +50,20 @@ $params = @{
     tasks               = @(
         @{
             category         = 'leaver'
+            continueOnError  = $true
+            description      = 'Cancela todas as solicitações pendentes de pacotes de acesso da pessoa.'
+            displayName      = 'Cancel all pending access package assignment requests for user'
+            executionSequence = 1
+            isEnabled        = $true
+            taskDefinitionId = '498770d9-bab7-4e4c-b73d-5ded82a1d0b3'
+            arguments        = @()
+        },
+        @{
+            category         = 'leaver'
             continueOnError  = $false
             description      = 'Desabilita a conta no diretório.'
             displayName      = 'Disable user account'
-            executionSequence = 1
+            executionSequence = 2
             isEnabled        = $true
             taskDefinitionId = '1dfdfcc7-52fa-4c2e-bf3a-e3919cc12950'
             arguments        = @()
@@ -63,7 +73,7 @@ $params = @{
             continueOnError  = $true
             description      = 'Revoga tokens de atualização e sessões de navegador.'
             displayName      = 'Revoke all refresh tokens for user'
-            executionSequence = 2
+            executionSequence = 3
             isEnabled        = $true
             taskDefinitionId = '509589a4-0466-4471-829e-49c5e502bdee'
             arguments        = @()
@@ -71,9 +81,19 @@ $params = @{
         @{
             category         = 'leaver'
             continueOnError  = $true
+            description      = 'Remove todas as atribuições de pacotes de acesso da pessoa.'
+            displayName      = 'Remove all access package assignments for user'
+            executionSequence = 4
+            isEnabled        = $true
+            taskDefinitionId = '42ae2956-193d-4f39-be06-691b8ac4fa1d'
+            arguments        = @()
+        },
+        @{
+            category         = 'leaver'
+            continueOnError  = $true
             description      = 'Remove todas as licenças atribuídas diretamente à pessoa.'
             displayName      = 'Remove all licenses for user'
-            executionSequence = 3
+            executionSequence = 5
             isEnabled        = $true
             taskDefinitionId = '8fa97d28-3e52-4985-b3a9-a1126f9b8b4e'
             arguments        = @()

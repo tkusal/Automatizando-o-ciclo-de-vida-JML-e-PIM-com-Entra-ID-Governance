@@ -13,6 +13,7 @@ param(
 
     [ValidateSet(
         'None',
+        'UserProvisioning',
         'Lifecycle',
         'Entitlement',
         'PimEligibility',
@@ -37,11 +38,13 @@ $scopes = [System.Collections.Generic.List[string]]@(
 )
 
 $writeProfiles = @{
+    UserProvisioning = @('User.ReadWrite.All')
     Lifecycle     = @('LifecycleWorkflows.ReadWrite.All')
     Entitlement   = @('EntitlementManagement.ReadWrite.All')
     PimEligibility = @('RoleEligibilitySchedule.ReadWrite.Directory')
     PimActivation = @('RoleAssignmentSchedule.ReadWrite.Directory')
     All           = @(
+        'User.ReadWrite.All'
         'LifecycleWorkflows.ReadWrite.All'
         'EntitlementManagement.ReadWrite.All'
         'RoleEligibilitySchedule.ReadWrite.Directory'
